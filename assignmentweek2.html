@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enhanced Personal Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    header, footer {
+      background: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      padding: 8px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    ul {
+      margin-top: 20px;
+    }
+    .media, .youtube-section {
+      margin-top: 30px;
+    }
+    .readonly-note {
+      background: #f1f1f1;
+      padding: 8px;
+      border-left: 4px solid #999;
+      font-size: 0.9em;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background: #555;
+    }
+    iframe {
+      width: 100%;
+      height: 360px;
+      border: none;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Personal Form</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>User Registration</h2>
+      <form action="/submit" method="POST" autocomplete="on">
+        <label for="fullname">Full Name *</label>
+        <input type="text" id="fullname" name="fullname" placeholder="John Doe" required />
+
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.com" required />
+
+        <label for="password">Password *</label>
+        <input type="password" id="password" name="password" minlength="6" required />
+
+        <label for="dob">Date of Birth *</label>
+        <input type="date" id="dob" name="dob" required />
+
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender">
+          <option value="">--Select--</option>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label>Preferred Contact Method</label>
+        <input type="radio" id="contact_email" name="contact" value="email" checked />
+        <label for="contact_email">Email</label>
+        <input type="radio" id="contact_phone" name="contact" value="phone" />
+        <label for="contact_phone">Phone</label>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="0712345678" />
+
+        <label for="bio">Short Bio</label>
+        <textarea id="bio" name="bio" rows="4" placeholder="Tell us a bit about yourself..."></textarea>
+
+        <label for="resume">Upload CV (PDF only)</label>
+        <input type="file" id="resume" name="resume" accept=".pdf" />
+
+        <label for="website">Your Website</label>
+        <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" />
+
+        <label for="referral">Referral Code</label>
+        <input type="text" id="referral" name="referral" value="AUTOGEN2025" readonly class="readonly-note" />
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Benefits of Joining</h2>
+      <ul>
+        <li>Access to exclusive content</li>
+        <li>Priority support</li>
+        <li>Member-only newsletters</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Pricing Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Price</th>
+            <th>Features</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Free</td>
+            <td>KES 0</td>
+            <td>Basic access</td>
+          </tr>
+          <tr>
+            <td>Pro</td>
+            <td>KES 1,000/month</td>
+            <td>Full access + priority support</td>
+          </tr>
+          <tr>
+            <td>Enterprise</td>
+            <td>Contact us</td>
+            <td>Custom solutions</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="media">
+      <h2>Personal Media</h2>
+      <p>Watch this intro video:</p>
+      <video controls width="100%">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section class="youtube-section">
+      <h2>🎵 My Favorite Songs</h2>
+
+      <p><strong>Stereo Hearts</strong> – Gym Class Heroes ft. Adam Levine</p>
+      <iframe 
+        src="https://www.youtube.com/embed/Ty0DE-0Eij4" 
+        title="Stereo Hearts"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+
+      <p><strong>IDGAF</strong> – Dua Lipa</p>
+      <iframe 
+        src="https://www.youtube.com/embed/3O1_3zBUKM8" 
+        title="Dua Lipa - IDGAF"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+
+      <p><strong>Common Person</strong> – Burna Boy</p>
+      <iframe 
+        src="https://www.youtube.com/embed/zF_BZ-QF01g" 
+        title="Burna Boy - Common Person"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Made with ❤️ by [blake2828]. All rights reserved.
+  </footer>
+</body>
+</html>
